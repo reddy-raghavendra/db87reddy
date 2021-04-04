@@ -2,11 +2,12 @@ extends layout
 
 block content
   h1= title
-  - let shoes = [{shoeCategory:"Formal",shoeBrand:"Clarks",price:140},{shoeCategory:"Casual",shoeBrand:"Vans",price:120},{shoeCategory:"Sports",shoeBrand:"Nike",price:"110"}]
+  - let shoes = results
+  //- - let shoes = [{shoeCategory:"Formal",shoeBrand:"Clarks",price:140},{shoeCategory:"Casual",shoeBrand:"Vans",price:120},{shoeCategory:"Sports",shoeBrand:"Nike",price:"110"}]
   div(class="container-fluid")
   div(class="row")
     each item,index in shoes
-        div(class="col-sm-2" style="background-color:gray; margin:2px" onclick=`buy(${index})`) Category: #{item.shoeCategory}, Brand: #{item.shoeBrand}, Price: #{item.price}
+        div(class="col-sm-2" style="background-color:gray; margin:2px" onclick=`buy(${index})`) Category: #{item.shoeCategory}, Brand: #{item.brand}, Size: #{item.size}
   script. 
     function buy(index){
         alert(`You purchased item ${index+1}`);

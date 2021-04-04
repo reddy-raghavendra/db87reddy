@@ -8,7 +8,7 @@ var shoe_controller = require('../controllers/shoe');
 router.get('/resource', api_controller.api);
 /// COSTUME ROUTES ///
 // POST request for creating a Shoe.
-router.post('/resource/shoes, shoe_controller.shoe_create_post');
+router.post('/resource/shoes', shoe_controller.shoe_create_post);
 // DELETE request to delete shoe.
 router.delete('/resource/shoes/:id', shoe_controller.shoe_delete);
 // PUT request to update Shoe.
