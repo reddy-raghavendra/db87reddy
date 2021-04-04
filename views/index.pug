@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p This is a home page
+  button(type='button' class='btn btn-primary' onclick="update()") Press Me
+  div(id="target" class="container-fluid w-25" style="margin:10px; background-color:beige") Display
+  script.  
+    var client_count = 0
+    function update(){
+      client_count ++;
+      document.getElementById("target").innerHTML = `Value now ${client_count}`
+    }
+  a(href="/shoes") Navigate to Shoes
+
