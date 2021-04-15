@@ -2,21 +2,23 @@ extends layout
 
 block content
   h1= title
-
-  - let shoeid = toShow._id
-  - let shoecategory = toShow.shoeCategory
-  - let shoebrand = toShow.brand
-  - let shoesize = toShow.size
-  div
-    div.row
-      div(class='shoeAttr mr-3') Shoe ID is:
-      div #{shoeid}
-    div.row
-      div(class='shoeAttr mr-3') Shoe Type is:
-      div #{shoecategory}
-    div.row
-      div(class='shoeAttr mr-3') Shoe Brand is:
-      div #{shoebrand}
-    div.row
-      div(class='shoeAttr mr-3') Shoe Size is:
-      div #{shoesize}
+  if(toShow == null)
+    h2 No instance found to show detail
+  else
+    - let shoeid = toShow._id
+    - let shoecategory = toShow.shoeCategory
+    - let shoebrand = toShow.brand
+    - let shoesize = toShow.size
+    div
+      div.row
+        div(class='shoeAttr mr-3 ') Shoe ID is:
+        div(class="items") #{shoeid}
+      div.row
+        div(class='shoeAttr mr-3 ') Shoe Type is:
+        div(class="items") #{shoecategory}
+      div.row
+        div(class='shoeAttr mr-3 ') Shoe Brand is:
+        div(class="items") #{shoebrand}
+      div.row
+        div(class='shoeAttr mr-3 ') Shoe Size is:
+        div(class="items") #{shoesize}

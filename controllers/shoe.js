@@ -100,6 +100,7 @@ exports.shoe_view_one_Page = async function(req, res) {
     console.log("single view for id " + req.query.id)
     try {
         result = await Shoe.findById(req.query.id)
+        console.log(result)
         res.render('shoedetail', { title: 'Shoe Detail', toShow: result });
     } catch (err) {
         res.status(500)
