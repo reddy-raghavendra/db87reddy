@@ -10,21 +10,21 @@ block content
     - let shoebrand = toShow.brand
     - let shoesize = toShow.size
 
-    div.row(class='mb-2')
-      div.mr-1 ID is
-      div #{shoeid}
-    - let actionid = "/resource/shoes/" + shoeid
-    form(id='ShoeForm', action=actionid, method="PUT")
-      div.form-group
-          label.shoeAttr(for='shoeCategory') Shoe Category
-          input#shoeCategory(type='text', name='shoecategory' value=shoecategory)
-      div.form-group
-          label.shoeAttr(for='brand') Shoe Brand
-          input#shoebrand(type='text', name='brand' value=shoebrand)
-      div.form-group
-          label.shoeAttr(for='size') Shoe Size
-          input#shoesize(type='number', name='size' value=shoesize)
-      input(type="submit")
+  div.row(class='mb-2')
+    div.mr-1 ID is
+    div #{shoeid}
+  - let actionid = "/resource/shoes/" + shoeid
+  form(id='ShoeForm', action=actionid, method="PUT")
+    div.form-group
+        label.shoeAttr(for='shoeCategory') Shoe Category
+        input#shoeCategory(type='text', name='shoecategory' value=shoecategory)
+    div.form-group
+        label.shoeAttr(for='brand') Shoe Brand
+        input#shoebrand(type='text', name='brand' value=shoebrand)
+    div.form-group
+        label.shoeAttr(for='size') Shoe Size
+        input#shoesize(type='number', name='size' value=shoesize)
+    input(type="submit")
 
   script.
     document.forms['ShoeForm'].addEventListener('submit', (event) => {

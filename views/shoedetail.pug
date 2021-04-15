@@ -3,7 +3,7 @@ extends layout
 block content
   h1= title
   if(toShow == null)
-    h2 No instance found to show detail
+    h2 No instance found to show
   else
     - let shoeid = toShow._id
     - let shoecategory = toShow.shoeCategory
@@ -11,14 +11,14 @@ block content
     - let shoesize = toShow.size
     div
       div.row
-        div(class='shoeAttr mr-3 ') Shoe ID is:
+        div(class='shoeAttr mr-3 items') Shoe ID is:
         div(class="items") #{shoeid}
       div.row
-        div(class='shoeAttr mr-3 ') Shoe Type is:
+        div(class='shoeAttr mr-3 items') Shoe Type is:
         div(class="items") #{shoecategory}
       div.row
-        div(class='shoeAttr mr-3 ') Shoe Brand is:
+        div(class='shoeAttr mr-3 items') Shoe Brand is:
         div(class="items") #{shoebrand}
       div.row
-        div(class='shoeAttr mr-3 ') Shoe Size is:
+        div(class='shoeAttr mr-3 items') Shoe Size is:
         div(class="items") #{shoesize}
