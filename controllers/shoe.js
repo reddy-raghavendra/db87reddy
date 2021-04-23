@@ -36,7 +36,9 @@ exports.shoe_create_post = async function(req, res) {
         let result = await document.save();
         res.send(result);
     } catch (err) {
-        res.error(500, `{"error": ${err}}`);
+        console.log(err)
+        res.send(err);
+        res.status(500)
     }
 };
 // Handle Costume delete form on DELETE.
@@ -66,7 +68,7 @@ exports.shoe_update_put = async function(req, res) {
         res.send(result)
     } catch (err) {
         res.status(500)
-        res.send(`{"error": ${err}: Update for id ${req.params.id} failed`);
+        res.send(err);
     }
 
 };

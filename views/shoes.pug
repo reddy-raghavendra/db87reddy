@@ -1,15 +1,22 @@
 extends layout
 
 block content
+  div(style="margin:2px") Shoes create
+    - let location = `dispatch(\"/shoes/create")`
+    button.btn( class="btn-primary m2-3",style="margin:2px", onclick= location) Create    
   h1= title
   - let shoes = results
   //- - let shoes = [{shoeCategory:"Formal",shoeBrand:"Clarks",price:140},{shoeCategory:"Casual",shoeBrand:"Vans",price:120},{shoeCategory:"Sports",shoeBrand:"Nike",price:"110"}]
   div(class="container-fluid")
-  div(class="row m-1")
+  div(class="row m-3") 
     each item,index in shoes
       - let destination = `dispatch(\"/shoes/update?id=${item._id}\")`
-      div(class="col-sm-2" style="background-color:gray; margin:2px") Category: #{item.shoeCategory}, Brand: #{item.brand}, Size: #{item.size}
-        button.btn( class="btn-primary ml-1", onclick= destination) Update
+      - let destinationDelete = `dispatch(\"/shoes/delete?id=${item._id}\")`
+      - let destinationGet = `dispatch(\"/shoes/detail/?id=${item._id}\")`
+      div(class="col-sm-4" style="background-color:gray; margin:3px") Category: #{item.shoeCategory}, Brand: #{item.brand}, Size: #{item.size}
+        button.btn( class="btn-primary m2-3",style="margin:2px", onclick= destination) Update
+        button.btn( class="btn-primary m2-3",style="margin:2px", onclick= destinationDelete) Delete
+        button.btn( class="btn-primary m2-3",style="margin:2px", onclick= destinationGet) Details
   script. 
     function buy(index){
         alert(`You purchased item ${index+1}`);

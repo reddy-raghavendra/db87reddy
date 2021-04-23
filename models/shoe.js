@@ -1,7 +1,14 @@
 const mongoose = require("mongoose")
 const shoeSchema = mongoose.Schema({
-    shoeCategory: String,
+    shoeCategory: {
+        type: String,
+        required: [true, "Shoe category should be mandatory"]
+    },
     brand: String,
-    size: Number
+    size: {
+        type: Number,
+        min: [1, "Shoe size should be minimum of 1"],
+        max: [14, "Shoe size cannot be greater than 14"]
+    }
 })
 module.exports = mongoose.model("Shoe", shoeSchema)
